@@ -59,4 +59,19 @@
 			</plugin></plugins>
 	</build>
 
+<!--	<distributionManagement>-->
+<!--		<repository>-->
+<!--			<id>TicTacToeBackend</id>-->
+<!--			<url>http://localhost:8082/manager/text</url>-->
+<!--&lt;!&ndash;			<url>file://${project.basedir}/target/repo</url>&ndash;&gt;-->
+<!--&lt;!&ndash;			<url>http://localhost:8081/</url>&ndash;&gt;-->
+<!--		</repository>-->
+<!--&lt;!&ndash;		<snapshotRepository>&ndash;&gt;-->
+<!--&lt;!&ndash;			<id>my-snapshot-repo</id>&ndash;&gt;-->
+<!--&lt;!&ndash;			<url>http://your-snapshot-repo-url</url>&ndash;&gt;-->
+<!--&lt;!&ndash;		</snapshotRepository>&ndash;&gt;-->
+<!--	</distributionManagement>-->
+
+
+
 </project>
