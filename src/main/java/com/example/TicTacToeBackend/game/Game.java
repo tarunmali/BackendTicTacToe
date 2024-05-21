@@ -21,11 +21,24 @@ public class Game {
         else if(player2==null){
             player2=new Player(random.nextInt(1,100),Move.CROSS);
             id=player2.getId();
+            nextPlayer=player1;
+            board.setUp();
         }
         else{
+            //doubt revise error handling
             throw new IllegalStateException("Registration is closed");
         }
         return id;
     }
+
+
+    public int getBoard(){
+        return board.getFormattedBoard();
+    }
+
+//    public String play(int playerId,int x, int y){
+//        if(winner!=null) return "Game Over"+ winner.getId()+" wins";
+//
+//    }
 
 }

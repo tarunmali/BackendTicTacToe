@@ -27,4 +27,10 @@ public class GameController {
         return game.registerNewPlayer();
     }
 
+    @RequestMapping(value="/display", method= RequestMethod.GET)
+    public int displayBoard(){
+        return game.getBoard();
+    }
+
+
 }
