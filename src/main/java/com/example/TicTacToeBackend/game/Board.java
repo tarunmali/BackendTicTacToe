@@ -31,4 +31,21 @@ public class Board {
         }
         return board;
     }
+
+    public void setMove(int x, int y, Move move){
+        if(moves[x][y]!=Move.EMPTY) throw new IllegalArgumentException("Invalid move");
+        moves[x][y]=move;
+    }
+
+    public boolean checkIfOver() {
+        for (int i = 0; i < 3; i++) {
+            if (moves[0][i] != Move.EMPTY && moves[0][i] == moves[1][i] && moves[1][i] == moves[2][i]) return true;
+            if (moves[i][0] != Move.EMPTY && moves[i][0] == moves[i][1] && moves[i][1] == moves[i][2]) return true;
+        }
+        if (moves[0][0] != Move.EMPTY && moves[0][0] == moves[1][1] && moves[1][1] == moves[2][2]) return true;
+        if (moves[0][2] != Move.EMPTY && moves[0][2] == moves[1][1] && moves[1][1] == moves[2][0]) return true;
+        return false;
+    }
+
+
 }

@@ -33,12 +33,22 @@ public class Game {
 
 
     public int getBoard(){
+        if(nextPlayer==null) throw new IllegalStateException("Game has not started yet");
         return board.getFormattedBoard();
     }
 
-//    public String play(int playerId,int x, int y){
-//        if(winner!=null) return "Game Over"+ winner.getId()+" wins";
-//
-//    }
+    public String play(int playerId,int x, int y){
+        if(winner!=null) return "Game Over"+ winner.getId()+" wins";
+        if(nextPlayer==null) throw new IllegalStateException("Game has not started yet");
+        if(playerId!=nextPlayer.getId()) throw new IllegalStateException("Not your turn");
+        if(x<0 || x>2 || y<0 || y>2) throw new IllegalArgumentException("Invalid move");
+        board.setMove(x,y,nextPlayer.getMove());
+        if(board.checkIfOver()){
+            winner=nextPlayer;
+            return "Game Over"+ winner.getId()+" wins";
+        }
+        nextPlayer=nextPlayer==player1?player2:player1;
+        return "Move made";
+    }
 
 }

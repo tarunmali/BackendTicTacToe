@@ -3,10 +3,7 @@ package com.example.TicTacToeBackend.controllers;
 
 import com.example.TicTacToeBackend.game.Game;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/game")
@@ -30,6 +27,11 @@ public class GameController {
     @RequestMapping(value="/display", method= RequestMethod.GET)
     public int displayBoard(){
         return game.getBoard();
+    }
+
+    @RequestMapping(value="/move", method= RequestMethod.POST)
+    public String makeMove(@RequestParam("playerId") int playerId, @RequestParam("x") int x, @RequestParam("y") int y){
+        return game.play(playerId,x,y);
     }
 
 

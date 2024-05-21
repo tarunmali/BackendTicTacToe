@@ -10,4 +10,8 @@ public class Player {
     public int getId() {
         return id;
     }
+
+    public Move getMove() {
+        return move;
+    }
 }
