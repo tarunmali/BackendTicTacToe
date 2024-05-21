@@ -13,6 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class GameController {
     @GetMapping
     public String greet() {
-        return "Hello, World!";
+        return "Hello, poll";
     }
 }
